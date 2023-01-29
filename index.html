@@ -42,7 +42,7 @@ doDisplay();
 }
 
 
-/* 배열 두 개 선언 부분 */
+/* 배열 선언 부분 */
  let arr_pastor = ["이중구", "백명렬", "신선호", "김사무엘", "장영준", "서영준", "장유나", "이재은", "박현수", "윤현준", "김승욱" ];
  let arr_code = ["LJG", "BML", "SSH", "KSML", "JYJ", "SYJ", "JYN", "LJE", "PHS", "YHJ", "KSU"];
 
@@ -53,6 +53,9 @@ function doDisplay() {
 
 
 </script>
+<br><br>
+
+<h2>2) 코드를 복사하세요 </h2>
 
 <p id="result" style="margin-top: 50px; margin-bottom: 10px; font-size: 15px;"> </p>
 <button id="btn_select_copy" style="display: none; font-size: 20px;" >코드 복사하기</button>
@@ -61,7 +64,7 @@ function doDisplay() {
 	const	 code_for_copy = document.getElementById("result").innerText;
 		document.getElementById("btn_select_copy").onclick = () => {
 		// 텍스트를 복사한다
- 	 	window.navigator.clipboard.writeText(code_for_copy.textContent).then(() => {
+ 	 	window.navigator.clipboard.writeText( result.textContent).then(() => {
     	// 복사가 완료되면 호출된다.
     	alert("복사되었습니다. 원하는 곳에 붙여넣어 주세요");
 		});
@@ -69,11 +72,17 @@ function doDisplay() {
 
 </script>
 
-
-<script type="text/javascript">
-	
-</script>
-
+<br>
+<h2>3) 아래 링크에 접속하셔서 붙여넣고 진행해주세요</h2>
+<a href="https://my.gallup.com/_Home/RedeemAccessCode" style="font-size: 20px;"> 👉🏻 갤럽 강점 테스트 코드 입력</a>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
