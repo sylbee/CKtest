@@ -15,20 +15,14 @@
 </head>
 <body>
 
-<p id="title">강점 테스트 코드 찾기</p>
+<h1 id="title">강점 테스트 코드 찾기</h1>
+<br>
+<h2>1) 아래 칸에 성함을 입력하세요</h2>
 
-<p>1) 아래 칸에 성함 입력하세요</p>
-
-<input type="text" id="name">
-<input type="submit" value="입력" onclick="SearchMatchPrintCode()" onkeypress="enterkey()">
+<input type="text" id="name" style="font-size: 20px;">
+<input type="submit" value="입력" style="font-size: 20px;" onclick="SearchMatchPrintCode()">
 
 <script type="text/javascript">
-
-function enterkey() {
-	if(window.event.keyCode == 13) {
-		SearchMatchPrintCode();
-	}
-}
 
 function SearchMatchPrintCode()  {
   const name = document.getElementById('name').value;
@@ -43,31 +37,34 @@ function SearchMatchPrintCode()  {
   	document.getElementById("result").innerText =arr_code[temp_idx];
   }
   
-
+doDisplay();
  	
 }
 
 
-/* 배열 선언 부분 */
+/* 배열 두 개 선언 부분 */
  let arr_pastor = ["이중구", "백명렬", "신선호", "김사무엘", "장영준", "서영준", "장유나", "이재은", "박현수", "윤현준", "김승욱" ];
  let arr_code = ["LJG", "BML", "SSH", "KSML", "JYJ", "SYJ", "JYN", "LJE", "PHS", "YHJ", "KSU"];
+
+function doDisplay() {
+	var submit_reveal = document.getElementById("btn_select_copy");
+	submit_reveal.style.display = 'block';
+}
 
 
 </script>
 
-<div id="result" style="margin-top: 50px;"> </div>
-<br>
-<button id="btn_select_copy">코드 복사하기</button>
+<p id="result" style="margin-top: 50px; margin-bottom: 10px; font-size: 15px;"> </p>
+<button id="btn_select_copy" style="display: none; font-size: 20px;" >코드 복사하기</button>
 
 <script type="text/javascript">
-	const	 code_for_copy = document.getElementById("result");
-
-	document.getElementById("btn_select_copy").onclick = () => {
-	// 텍스트를 복사한다
-  	window.navigator.clipboard.writeText(code_for_copy.textContent).then(() => {
+	const	 code_for_copy = document.getElementById("result").innerText;
+		document.getElementById("btn_select_copy").onclick = () => {
+		// 텍스트를 복사한다
+ 	 	window.navigator.clipboard.writeText(code_for_copy.textContent).then(() => {
     	// 복사가 완료되면 호출된다.
     	alert("복사되었습니다. 원하는 곳에 붙여넣어 주세요");
-		};
+		});
 	};
 
 </script>
@@ -80,14 +77,3 @@ function SearchMatchPrintCode()  {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
